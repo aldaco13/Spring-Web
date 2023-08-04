@@ -5,16 +5,24 @@
 <title> Hola Spring </title>
 
 <style>
+
+    /*Clase para centrar div*/
+    .parent{
+        display: grid;
+        place-items: center;
+    }
+
     .div1{
-        
-        width: 80%;
+        padding: 0 10px;
+        width: 50%;
         border: 2px solid blue;
+        background: rgb(170, 170, 170);
     }
 </style>
 
 </head>
 <body>
-    <div>
+    <div class="parent">
         <div class="div1">
             <p th:text="${descMap}"></p>
 		    <p th:text="${tituloMap}"></p>

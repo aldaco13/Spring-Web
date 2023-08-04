@@ -25,14 +25,5 @@ public class IndexController {
 		return INDEX;
 		
 	}
-	
-	@GetMapping("/map")
-	public String indexMap(Map<String, Object> map) {
-		System.out.println("entra indexMap");
-		map.put("descMap", "Texto insertado con thymeleaf desde el metodo indexMap usando \"Map<String, Object>\"");
-		map.put("tituloMap", "Hola Spring Framework! indexMap");
-		return INDEX;
 		
-	}
-	
 }
