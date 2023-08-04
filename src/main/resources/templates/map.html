@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8"/>
+<title> Hola Spring </title>
+
+<style>
+    .div1{
+        
+        width: 80%;
+        border: 2px solid blue;
+    }
+</style>
+
+</head>
+<body>
+    <div>
+        <div class="div1">
+            <p th:text="${descMap}"></p>
+		    <p th:text="${tituloMap}"></p>
+        </div>
+    </div>
+</body>
+</html>
