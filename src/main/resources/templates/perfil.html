@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8"/>
+<title> Perfil usuario </title>
+<style>
+    /*Clase para centrar div*/
+    .parent{
+        display: grid;
+        place-items: center;
+    }
+
+    .div_user{
+        padding: 10px 10px 10px 10px;
+        width: 50%;
+        border: 2px solid blue;
+        background: rgb(243, 242, 242);
+    }
+
+    .image{
+        margin: auto;
+        width: 70%;
+        border: 1px solid blue;
+    }
+
+    .datos{
+        width: 100%;
+        text-align: left;
+        font-size: medium;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+</head>
+<body>
+	<div class="parent">
+        <div class="div_user">
+            <div class="image">
+                <span th:if="${usuario.genero == 'H'}">
+                    <img src="Images/hombre.png" alt="Hombre" width="150" height="150">
+                </span>
+                <span th:if="${usuario.genero == 'M'}">
+                    <img src="Images/mujer.jpg" alt="Mujer">    
+                </span>
+            </div>
+            <div class="datos">
+                <p>Nombre: <span th:text="${usuario.nombre}"/></p>
+                <p>Apellido: <span th:text="${usuario.apellido}"/></p>
+            </div>
+            
+        </div>
+    </div>
+	
+</body>
+</html>
