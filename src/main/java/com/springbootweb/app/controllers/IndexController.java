@@ -3,6 +3,7 @@ package com.springbootweb.app.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,12 @@ public class IndexController {
 	public static final String INDEX = "index";
 	public static final String TRUE = "true";
 	
+	@Value("${texto.indexController.index.titulo}")
+	private String textoIndex;
+	@Value("${texto.indexController.perfil.titulo}")
+	private String textoPerfil;
+	@Value("${texto.indexController.listar.titulo}")
+	private String textoListar;
 	
 	/*@GetMapping({"/index", "/", "/home"})
 	public String index() {
@@ -24,12 +31,12 @@ public class IndexController {
 		return INDEX;
 	}*/
 	
-	@GetMapping({"/index", "/", "/home"})
+	@GetMapping({"/index", "/home"})
 	public String indexModel(Model model) {
 		System.out.println("entra indexModel");
 		model.addAttribute("muestraDesc", true);
 		model.addAttribute("descModel", "Texto insertado con thymeleaf desde el metodo index usando \"model.addAttribute\"");
-		model.addAttribute("tituloModel", "Hola Spring Framework! indexModel");
+		model.addAttribute("tituloModel", textoIndex);
 		return INDEX;
 		
 	}
@@ -48,14 +55,14 @@ public class IndexController {
 		user.setNombre("Omar");
 		user.setApellido("Aldaco");
 		user.setGenero("H");
+		model.addAttribute("titulo", textoPerfil);
 		model.addAttribute("usuario", user);
 		return "perfil";
 	}
 	
 	@RequestMapping("/listar")
 	public String listar(Model model) {
-		
-		model.addAttribute("titulo", "Listado Usuario");
+		model.addAttribute("titulo", textoListar);
 		return "listar";
 	}
 	
