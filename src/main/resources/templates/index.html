@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${tituloModel}"></title>
+<link rel="stylesheet" href="tetx/css" th:href="@{/css/Style.css}"></link>
+<style>
+    .divIndex{
+        background-color: rgb(190, 234, 194);
+        width: 100%;
+        border: 2px solid blue;
+		text-align: center;
+    }
+</style>
+
+</head>
+<body>
+	<span th:if="${muestraDesc}">
+		<div class="divIndex">
+			<p th:text="${descModel}" style="color: blue;"></p>
+			<p th:text="${tituloModel}" style="color: blueviolet"></p>
+		</div>
+	</span>
+	
+	<span th:if="${muestraAux}">
+		<h1 class="colorRojo">Error en el server</h1>
+		<h2 class="colorAzul">Intente de nuevo</h2>
+		<img th:src="@{/Images/error.png}" alt="">
+	</span>
+
+	
+</body>
+</html>

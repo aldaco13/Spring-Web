@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8"/>
+<title> Hola Spring Map</title>
+
+<style>
+
+    /*Clase para centrar div*/
+    .parent{
+        display: grid;
+        place-items: center;
+    }
+
+    .div1{
+        padding: 0 10px;
+        width: 50%;
+        border: 2px solid blue;
+        background: rgb(170, 170, 170);
+    }
+</style>
+
+</head>
+<body>
+    <div class="parent">
+        <div class="div1">
+            <p th:text="${descMap}"></p>
+		    <p th:text="${tituloMap}"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
