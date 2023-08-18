@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8"/>
-<title> Perfil usuario </title>
+<title th:text="${titulo}"></title>
 <style>
     /*Clase para centrar div*/
     .parent{
@@ -33,13 +33,14 @@
 </head>
 <body>
 	<div class="parent">
+        <h1 th:text="${titulo}"></h1>
         <div class="div_user">
             <div class="image">
                 <span th:if="${usuario.genero == 'H'}">
-                    <img src="Images/hombre.png" alt="Hombre" width="150" height="150">
+                    <img th:src="@{/Images/hombre.jpg}" alt="Hombre" width="150" height="150">
                 </span>
                 <span th:if="${usuario.genero == 'M'}">
-                    <img src="Images/mujer.jpg" alt="Mujer">    
+                    <img th:src="@{/Images/mujer.jpg}" alt="Mujer">    
                 </span>
             </div>
             <div class="datos">
